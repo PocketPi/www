@@ -1,15 +1,16 @@
 
 CREATE TABLE `board_members` (
-  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `member` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `board_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `memeber_id` int(11) NOT NULL,
+  `board_email` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `members3` (
-  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE `members` (
+  `memeber_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `email` varchar(64) NOT NULL UNIQUE KEY,
-  `name` varchar(64) NOT NULL,
+  `firstname` varchar(64) NOT NULL,
+  `surname` varchar(64) NOT NULL,
   `birthdate` varchar(16) DEFAULT NULL,
   `address` varchar(64) DEFAULT NULL,
   `zipcode` varchar(8) DEFAULT NULL,
@@ -19,8 +20,8 @@ CREATE TABLE `members3` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `motorcycles` (
-  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `owner` int(11) NOT NULL,
+  `mc_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `memeber_id` int(11) NOT NULL,
   `make` varchar(255) NOT NULL,
   `model` varchar(255) NOT NULL,
   `notes` text NOT NULL,
